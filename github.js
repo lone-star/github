@@ -234,6 +234,14 @@
         });
       };
 
+      // Retrieve the issue of a given number
+      // -------
+
+      this.getIssue = function(number, cb) {
+        _request("GET", repoPath + "/issues/"+number, null, cb);
+      };
+
+
       // Post a new blob object, getting a blob SHA back
       // -------
 
