@@ -241,6 +241,12 @@
         _request("GET", repoPath + "/issues/"+number, null, cb);
       };
 
+      // Retrieve a single hook
+      // -------
+
+      this.getHook = function(number, cb) {
+        _request("GET", repoPath + "/hooks/"+number, null, cb);
+      };
 
       // Post a new blob object, getting a blob SHA back
       // -------
@@ -356,6 +362,13 @@
 
       this.createIssue = function(options, cb) {
         _request("POST", repoPath + "/issues", options, cb);
+      };
+
+      // Create hook
+      // -------
+
+      this.createHook = function(options, cb) {
+        _request("POST", repoPath + "/hooks", options, cb);
       };
 
       // Read file at given path
